@@ -1,0 +1,54 @@
+body{
+    background-color: black;
+}
+.wrapper{
+    padding-left: 600px;
+    padding-top: 20px;
+}
+.rpsButton{
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    color: black;
+    background-color: white;
+}
+#endGameButton{
+    margin-left: 54px;
+    margin-top: 6px;
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    color: black;
+    background-color: white;
+}
+.rpsButton:hover{
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(255, 255, 255);
+}
+#endGameButton:hover{
+    background-color: red;
+}
+.heading{
+    padding-left: 580px;
+    padding-top: 90px;
+    color: white;
+}
+#result{
+    padding-left: 35px;
+    padding-top: 30px;
+    color: rgb(81, 255, 0);
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+#hands{
+    color: white;
+    padding-left: 0px;
+    padding-top: 30px;
+    color: deeppink;
+}
+#player-score{
+    color: rgb(38, 0, 255);
+    padding-left: 35px;
+    font-size: 20px;
+    padding-top: 10px;
+}
