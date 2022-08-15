@@ -1,4 +1,3 @@
-
 # ✊🖐✌ Rock Paper scissors.
 
 ## using Vannilla js
@@ -8,7 +7,7 @@
 
 ## Screenshots
 
-![Screenshot](./Screenshot%20(2).png)
+![ScreenShot](Assets/images/preview.png)
 
-![Screenshot](./Screenshot%20(3).png)
+
 
