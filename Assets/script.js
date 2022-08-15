@@ -12,23 +12,41 @@ function getComputerChoice(){
 }
 
 
-//to get the score og player based on player and computer choices
-function getResult(playerChoice,computerChoice){
-    let score = 0;
+//to get the score of player based on player and computer choices
+function getPlayerResult(playerChoice,computerChoice){
+    let pScore = 0;
     if(playerChoice == computerChoice){
-        score =0;
+        pScore =0;
     } else if(playerChoice == 'Rock' && computerChoice == 'Scissors'){
-        score = 1
+        pScore = 1
     }  else if(playerChoice == 'Paper' && computerChoice == 'Rock'){
-        score = 1
+        pScore = 1
     }  else if(playerChoice == 'Scissors' && computerChoice == 'Paper'){
-        score = 1
+        pScore = 1
     } else{
-        score = -1
+        pScore = -1
     }
 
     //return score
-    return score
+    return pScore
+}
+//to get the score of player based on player and computer choices
+function getComputerResult(playerChoice,computerChoice){
+    let cScore = 0;
+    if(computerChoice == playerChoice){
+        cScore =0;
+    } else if(computerChoice == 'Rock' && playerChoice == 'Scissors'){
+        cScore = 1
+    }  else if(computerChoice == 'Paper' && playerChoice == 'Rock'){
+        cScore = 1
+    }  else if(computerChoice == 'Scissors' && playerChoice == 'Paper'){
+        cScore = 1
+    } else{
+        cScore = -1
+    }
+
+    //return score
+    return cScore
 }
 
 
@@ -37,18 +55,23 @@ function showResult(score,playerChoice,computerChoice){
     const resultDiv = document.getElementById('result')
     const handsDiv = document.getElementById('hands')
     const playerScoreDiv = document.getElementById('player-score')
+    const computerScoreDiv = document.getElementById('computer-score')
     if ( score == -1){
-        resultDiv.innerText = 'You Lose..!'
+        resultDiv.style.cssText = 'color : red';
+        resultDiv.innerText = 'You Lose..! 😢'
     } else if (score == 0){
-        resultDiv.innerText = 'You Tie..!'
+        resultDiv.style.cssText = 'color : yellow';
+        resultDiv.innerText = 'You Tie..! 😶'
         
     } else{
-        resultDiv.innerText = 'You Won!'
+        resultDiv.style.cssText = 'color : green';
+        resultDiv.innerText = 'You Won! 😍'
     }
 
     handsDiv.innerText = `👨 ${playerChoice} vs 🤖 ${computerChoice}`
 
     playerScoreDiv.innerText = `your score : ${totalScore['playerScore']}`
+    computerScoreDiv.innerText = `computer score : ${totalScore['computerScore']}`
 }
 
 
@@ -56,11 +79,13 @@ function onClickRPS(playerChoice){
     console.log({playerChoice})
     const computerChoice = getComputerChoice()
     console.log({computerChoice})
-    const score = getResult(playerChoice,computerChoice)
-    totalScore['playerScore'] +=score
-    // totalScore['computerScore'] +=score
-    console.log({score})
-    showResult(score,playerChoice,computerChoice);
+    const pScore = getPlayerResult(playerChoice,computerChoice)
+    totalScore['playerScore'] +=pScore;
+
+    const cScore = getComputerResult(playerChoice,computerChoice)
+    totalScore['computerScore'] +=cScore;
+    
+    showResult(pScore,playerChoice,computerChoice);
     console.log(totalScore)
 }
 
@@ -88,10 +113,12 @@ function stopGame(){
         const resultDiv = document.getElementById('result')
         const handsDiv = document.getElementById('hands')
         const playerScoreDiv = document.getElementById('player-score')
+        const computerScoreDiv = document.getElementById('computer-score')
 
         resultDiv.innerText = ''
         handsDiv.innerText = ''
         playerScoreDiv.innerText = ''
+        computerScoreDiv.innerText = ''
      }
     
 
