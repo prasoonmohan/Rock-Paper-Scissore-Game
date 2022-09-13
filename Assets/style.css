@@ -71,4 +71,24 @@ body{
 }
 
 
+@media only screen and (max-width : 700px){
+    .wrapper{
+        margin-left: 110px;
+    }
+}
+@media only screen and (max-width : 600px){
+    .wrapper{
+        margin-left: 65px;
+    }
+}
+@media only screen and (max-width : 375px){
+    .wrapper{
+        margin-left: 12px;
+    }
+}
+@media only screen and (max-width : 800px){
+    .wrapper{
+        margin-left: 190px;
+    }
+}
 

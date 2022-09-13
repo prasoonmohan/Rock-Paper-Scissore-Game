@@ -8,7 +8,7 @@
 
 ## Screenshots
 
-![Screenshot](./Screenshot%20(2).png)
+![Screenshot](./Assets/images/preview.png)
 
-![Screenshot](./Screenshot%20(3).png)
+
 
